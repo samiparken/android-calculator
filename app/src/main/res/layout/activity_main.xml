@@ -36,6 +36,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onClear"
             />
         <Button
             android:id="@+id/btnPlusMinus"
@@ -260,7 +261,7 @@
             android:textSize="30sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
-            />
+            android:onClick="onDecimalPoint"/>
         <Button
             android:id="@+id/btnEqual"
             android:layout_width="0dp"
