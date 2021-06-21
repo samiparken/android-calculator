@@ -47,7 +47,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
-            />
+            android:onClick="onOperator"/>
         <Button
             android:id="@+id/btnPercent"
             android:layout_width="0dp"
@@ -168,6 +168,7 @@
             android:onClick="onDigit"
             />
         <Button
+            android:id="@+id/btnMinus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    var currentValue: Double = 0.0
     var isInteger = false
     var isEmpty = true
 
@@ -23,6 +25,28 @@ class MainActivity : AppCompatActivity() {
         if (isEmpty) {
             isInteger = true
             isEmpty = false
+        }
+    }
+
+    fun onOperator(view: View){
+        val operator = (view as Button).text
+        val inputValue: String = tvInput.text.toString()
+
+        if( operator == "+/-") {
+            when(isInteger) {
+                true -> tvInput.text = (inputValue.toInt() * -1).toString()
+                false -> tvInput.text = (inputValue.toDouble() * -1).toString()
+            }
+        } else if (operator == "−") {
+
+        } else if (operator == "+") {
+
+        } else if (operator == "✕") {
+
+        } else if (operator == "÷") {
+
+        } else if (operator == "%") {
+
         }
     }
 
