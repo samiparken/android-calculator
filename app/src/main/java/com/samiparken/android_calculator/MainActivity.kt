@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     var currentValue: Double = 0.0
+    var previousOperator: String = ""
     var isInteger = false
     var isEmpty = true
 
@@ -21,15 +22,19 @@ class MainActivity : AppCompatActivity() {
 
     fun onDigit(view: View) {
         Toast.makeText(this, "Digit", Toast.LENGTH_SHORT).show()
-        tvInput.append((view as Button).text)
         if (isEmpty) {
             isInteger = true
             isEmpty = false
+            tvInput.text = (view as Button).text
+        } else {
+            tvInput.append((view as Button).text)
         }
     }
 
     fun onOperator(view: View){
-        val operator = (view as Button).text
+        Toast.makeText(this, (view as Button).text, Toast.LENGTH_SHORT).show()
+
+        val operator = (view as Button).text.toString()
         val inputValue: String = tvInput.text.toString()
 
         if( operator == "+/-") {
@@ -37,22 +42,38 @@ class MainActivity : AppCompatActivity() {
                 true -> tvInput.text = (inputValue.toInt() * -1).toString()
                 false -> tvInput.text = (inputValue.toDouble() * -1).toString()
             }
-        } else if (operator == "−") {
+        } else {
+            if (previousOperator == "-") {
+                currentValue -= inputValue.toDouble()
+            } else if (previousOperator == "+") {
+                currentValue += inputValue.toDouble()
+            } else if (previousOperator == "x") {
+                currentValue *= inputValue.toDouble()
+            } else if (previousOperator == "÷") {
+                currentValue /= inputValue.toDouble()
+            } else if (previousOperator == "%") {
+                currentValue %= inputValue.toDouble()
+            }
 
-        } else if (operator == "+") {
+            isEmpty = true
+            if ( operator == "=") {
+                previousOperator = ""
+                tvInput.text = currentValue.toString()
+                return
+            }
 
-        } else if (operator == "✕") {
-
-        } else if (operator == "÷") {
-
-        } else if (operator == "%") {
-
+            if (previousOperator == "") {
+                currentValue = inputValue.toDouble()
+            } else {
+                tvInput.text = currentValue.toString()
+            }
+            previousOperator = operator
         }
     }
 
     fun onClear(view: View) {
         Toast.makeText(this, "Clear!", Toast.LENGTH_SHORT).show()
-        tvInput.text = ""
+        tvInput.text = "0"
         isInteger = false
         isEmpty = true
     }

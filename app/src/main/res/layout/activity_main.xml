@@ -57,6 +57,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onOperator"
             />
         <Button
             android:id="@+id/btnDivide"
@@ -67,7 +68,7 @@
             android:textSize="30sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
-            />
+            android:onClick="onOperator"/>
     </LinearLayout>
 
     <!-- 7 8 9 -->
@@ -117,11 +118,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="✕"
+            android:text="x"
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             />
     </LinearLayout>
 
@@ -172,10 +173,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="−"
+            android:text="-"
             android:textSize="30sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onOperator"
             />
     </LinearLayout>
 
@@ -230,6 +232,7 @@
             android:textSize="30sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onOperator"
             />
     </LinearLayout>
 
@@ -272,6 +275,7 @@
             android:textSize="30sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onOperator"
             />
     </LinearLayout>
 
