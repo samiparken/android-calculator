@@ -13,6 +13,7 @@
         android:layout_height="250dp"
         android:background="#efefef"
         android:textSize="48sp"
+        android:textColor="@color/white"
         android:maxLength="12"
         android:backgroundTint="@color/black"
         />
@@ -33,7 +34,6 @@
             android:layout_weight="1"
             android:text="AC"
             android:textSize="20sp"
-            android:onClick="onDigit"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
             />
@@ -98,6 +98,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnNine"
@@ -108,6 +109,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnMultiply"
@@ -118,6 +120,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
     </LinearLayout>
 
@@ -150,6 +153,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnSix"
@@ -160,6 +164,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:layout_width="0dp"
@@ -188,9 +193,9 @@
             android:layout_weight="1"
             android:text="1"
             android:textSize="20sp"
-            android:onClick="onDigit"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnTwo"
@@ -201,6 +206,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnThree"
@@ -211,6 +217,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnPlus"
@@ -242,6 +249,7 @@
             android:textSize="20sp"
             android:layout_margin="1dp"
             android:background="@drawable/custom_rounded_corners"
+            android:onClick="onDigit"
             />
         <Button
             android:id="@+id/btnPoint"
